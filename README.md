@@ -21,9 +21,6 @@ You can also move the mouse to the different intersections with Command-[h/j/k/l
 
 ==========
 
-There are a few bugs and quirks still:
-* I would like it to not de-focus the current window when entering grid-mode.
-
 Features I would like to add:
 * Ability to change the keybindings
 * Ability to right-click
@@ -31,4 +28,4 @@ Features I would like to add:
 * Ability to drag
 * Make it nicer looking
 
-If you like this, pleas contribute or make a Bitcoin donation to: 1DBwurfWihQow5xpGaydfxqS2So1aXM3Vc
+If you like this, please contribute or make a Bitcoin donation to: 1DBwurfWihQow5xpGaydfxqS2So1aXM3Vc
