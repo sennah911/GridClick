@@ -17,8 +17,10 @@
     
     CGPoint focusCoord;
     CGRect newFrame;
+    CGPoint newMousePoint;
 }
 
+@property (strong) NSRunningApplication *oldApp;
 - (void)reloadGrid;
 
 @end

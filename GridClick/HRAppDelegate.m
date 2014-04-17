@@ -40,12 +40,17 @@ static HRAppDelegate *globalSelf;
 OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler,EventRef theEvent,
                          void *userData)
 {
+    NSRunningApplication *oldApp = [[NSWorkspace sharedWorkspace] frontmostApplication];
+    
     if (!globalSelf.gridWindowController) {
         globalSelf.gridWindowController = [[HRGridWindowController alloc] initWithWindowNibName:@"HRGridWindowController"];
     }
     if (globalSelf.gridWindowController.window.isVisible) {
         [globalSelf.gridWindowController.window close];
+        [globalSelf.gridWindowController.oldApp activateWithOptions:NSApplicationActivateIgnoringOtherApps];
     } else {
+        globalSelf.gridWindowController.oldApp = oldApp;
+        
         [globalSelf.gridWindowController showWindow:globalSelf.gridWindowController];
         [globalSelf.gridWindowController reloadGrid];
     }

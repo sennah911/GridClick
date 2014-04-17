@@ -27,7 +27,7 @@
 {
     [super windowDidLoad];
     
-    self.window.styleMask = NSBorderlessWindowMask;
+    [self.window setStyleMask:[self.window styleMask] | NSNonactivatingPanelMask];
     self.window.backgroundColor = [NSColor clearColor];
     self.window.opaque = NO;
     self.window.level = kCGMainMenuWindowLevel;
@@ -135,9 +135,6 @@ void postMouseEvent(CGMouseButton button, CGEventType type, const CGPoint point)
         NSLog(@"%f, %f", focusCoord.x, focusCoord.y);
         NSLog(@"%f, %f", newFrame.origin.x, newFrame.origin.y);
         
-        //CGWarpMouseCursorPosition(CGPointMake(newFrame.origin.x + newFrame.size.width/2*focusCoord.x, screen.frame.size.height - (newFrame.origin.y + newFrame.size.height/2*focusCoord.y)));
-        CGPoint newMousePoint;
-        
         if (focusCoord.x == 0) {
             newMousePoint.x = view1.frame.origin.x;
         } else if (focusCoord.x == 1) {
@@ -182,7 +179,7 @@ void postMouseEvent(CGMouseButton button, CGEventType type, const CGPoint point)
             view4.frame = CGRectMake(newFrame.origin.x + newFrame.size.width/2, newFrame.origin.y + newFrame.size.height/2, newFrame.size.width/2, newFrame.size.height/2);
         }
         
-        CGPoint newMousePoint;
+        
         
         if (focusCoord.x == 0) {
             newMousePoint.x = view1.frame.origin.x;
@@ -204,23 +201,20 @@ void postMouseEvent(CGMouseButton button, CGEventType type, const CGPoint point)
         CGWarpMouseCursorPosition(newMousePoint);
         
         if ([theEvent keyCode] == 36) {
-            NSLog(@"Enter");
-            NSLog(@"MousePoint = %f, %f", newMousePoint.x, newMousePoint.y);
-            
-            [NSApp activateIgnoringOtherApps:NO];
-            
             [self resignFirstResponder];
-            [self close];
             
-            [self clickMouse];
+            [self close];
+            [self.oldApp activateWithOptions:NSApplicationActivateIgnoringOtherApps];
+            
+            [self performSelector:@selector(clickMouse) withObject:nil afterDelay:1];
         }
     }
 }
 
 
 - (void)clickMouse {
-    postMouseEvent(kCGMouseButtonLeft, kCGEventLeftMouseDown, [NSEvent mouseLocation]);
-    postMouseEvent(kCGMouseButtonLeft, kCGEventLeftMouseUp, [NSEvent mouseLocation]);
+    postMouseEvent(kCGMouseButtonLeft, kCGEventLeftMouseDown, newMousePoint);
+    postMouseEvent(kCGMouseButtonLeft, kCGEventLeftMouseUp, newMousePoint);
 }
 
 @end
