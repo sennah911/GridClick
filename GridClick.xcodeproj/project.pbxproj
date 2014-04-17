@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20ABA07D18FDDB8900CFE569 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20ABA07C18FDDB8900CFE569 /* Cocoa.framework */; };
+		20ABA08718FDDB8900CFE569 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA08518FDDB8900CFE569 /* InfoPlist.strings */; };
+		20ABA08918FDDB8900CFE569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA08818FDDB8900CFE569 /* main.m */; };
+		20ABA08D18FDDB8900CFE569 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA08B18FDDB8900CFE569 /* Credits.rtf */; };
+		20ABA09018FDDB8900CFE569 /* HRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA08F18FDDB8900CFE569 /* HRAppDelegate.m */; };
+		20ABA09318FDDB8900CFE569 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA09118FDDB8900CFE569 /* MainMenu.xib */; };
+		20ABA09518FDDB8900CFE569 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA09418FDDB8900CFE569 /* Images.xcassets */; };
+		20ABA09C18FDDB8900CFE569 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20ABA09B18FDDB8900CFE569 /* XCTest.framework */; };
+		20ABA09D18FDDB8900CFE569 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20ABA07C18FDDB8900CFE569 /* Cocoa.framework */; };
+		20ABA0A518FDDB8900CFE569 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA0A318FDDB8900CFE569 /* InfoPlist.strings */; };
+		20ABA0A718FDDB8900CFE569 /* GridClickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA0A618FDDB8900CFE569 /* GridClickTests.m */; };
+		20ABA0B118FDE9E800CFE569 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20ABA0B018FDE9E800CFE569 /* Carbon.framework */; };
+		20ABA0B518FDECF700CFE569 /* HRGridWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABA0B318FDECF700CFE569 /* HRGridWindowController.m */; };
+		20ABA0B618FDECF700CFE569 /* HRGridWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20ABA0B418FDECF700CFE569 /* HRGridWindowController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20ABA09E18FDDB8900CFE569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20ABA07118FDDB8900CFE569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20ABA07818FDDB8900CFE569;
+			remoteInfo = GridClick;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20ABA07918FDDB8900CFE569 /* GridClick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridClick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20ABA07C18FDDB8900CFE569 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		20ABA07F18FDDB8900CFE569 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		20ABA08018FDDB8900CFE569 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		20ABA08118FDDB8900CFE569 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		20ABA08418FDDB8900CFE569 /* GridClick-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GridClick-Info.plist"; sourceTree = "<group>"; };
+		20ABA08618FDDB8900CFE569 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		20ABA08818FDDB8900CFE569 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20ABA08A18FDDB8900CFE569 /* GridClick-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GridClick-Prefix.pch"; sourceTree = "<group>"; };
+		20ABA08C18FDDB8900CFE569 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		20ABA08E18FDDB8900CFE569 /* HRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRAppDelegate.h; sourceTree = "<group>"; };
+		20ABA08F18FDDB8900CFE569 /* HRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRAppDelegate.m; sourceTree = "<group>"; };
+		20ABA09218FDDB8900CFE569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		20ABA09418FDDB8900CFE569 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		20ABA09A18FDDB8900CFE569 /* GridClickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridClickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20ABA09B18FDDB8900CFE569 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		20ABA0A218FDDB8900CFE569 /* GridClickTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GridClickTests-Info.plist"; sourceTree = "<group>"; };
+		20ABA0A418FDDB8900CFE569 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		20ABA0A618FDDB8900CFE569 /* GridClickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridClickTests.m; sourceTree = "<group>"; };
+		20ABA0B018FDE9E800CFE569 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		20ABA0B218FDECF700CFE569 /* HRGridWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRGridWindowController.h; sourceTree = "<group>"; };
+		20ABA0B318FDECF700CFE569 /* HRGridWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRGridWindowController.m; sourceTree = "<group>"; };
+		20ABA0B418FDECF700CFE569 /* HRGridWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRGridWindowController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20ABA07618FDDB8900CFE569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20ABA0B118FDE9E800CFE569 /* Carbon.framework in Frameworks */,
+				20ABA07D18FDDB8900CFE569 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20ABA09718FDDB8900CFE569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20ABA09D18FDDB8900CFE569 /* Cocoa.framework in Frameworks */,
+				20ABA09C18FDDB8900CFE569 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20ABA07018FDDB8900CFE569 = {
+			isa = PBXGroup;
+			children = (
+				20ABA08218FDDB8900CFE569 /* GridClick */,
+				20ABA0A018FDDB8900CFE569 /* GridClickTests */,
+				20ABA07B18FDDB8900CFE569 /* Frameworks */,
+				20ABA07A18FDDB8900CFE569 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20ABA07A18FDDB8900CFE569 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20ABA07918FDDB8900CFE569 /* GridClick.app */,
+				20ABA09A18FDDB8900CFE569 /* GridClickTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20ABA07B18FDDB8900CFE569 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20ABA0B018FDE9E800CFE569 /* Carbon.framework */,
+				20ABA07C18FDDB8900CFE569 /* Cocoa.framework */,
+				20ABA09B18FDDB8900CFE569 /* XCTest.framework */,
+				20ABA07E18FDDB8900CFE569 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20ABA07E18FDDB8900CFE569 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20ABA07F18FDDB8900CFE569 /* AppKit.framework */,
+				20ABA08018FDDB8900CFE569 /* CoreData.framework */,
+				20ABA08118FDDB8900CFE569 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		20ABA08218FDDB8900CFE569 /* GridClick */ = {
+			isa = PBXGroup;
+			children = (
+				20ABA08E18FDDB8900CFE569 /* HRAppDelegate.h */,
+				20ABA08F18FDDB8900CFE569 /* HRAppDelegate.m */,
+				20ABA09118FDDB8900CFE569 /* MainMenu.xib */,
+				20ABA0B218FDECF700CFE569 /* HRGridWindowController.h */,
+				20ABA0B318FDECF700CFE569 /* HRGridWindowController.m */,
+				20ABA0B418FDECF700CFE569 /* HRGridWindowController.xib */,
+				20ABA09418FDDB8900CFE569 /* Images.xcassets */,
+				20ABA08318FDDB8900CFE569 /* Supporting Files */,
+			);
+			path = GridClick;
+			sourceTree = "<group>";
+		};
+		20ABA08318FDDB8900CFE569 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20ABA08418FDDB8900CFE569 /* GridClick-Info.plist */,
+				20ABA08518FDDB8900CFE569 /* InfoPlist.strings */,
+				20ABA08818FDDB8900CFE569 /* main.m */,
+				20ABA08A18FDDB8900CFE569 /* GridClick-Prefix.pch */,
+				20ABA08B18FDDB8900CFE569 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20ABA0A018FDDB8900CFE569 /* GridClickTests */ = {
+			isa = PBXGroup;
+			children = (
+				20ABA0A618FDDB8900CFE569 /* GridClickTests.m */,
+				20ABA0A118FDDB8900CFE569 /* Supporting Files */,
+			);
+			path = GridClickTests;
+			sourceTree = "<group>";
+		};
+		20ABA0A118FDDB8900CFE569 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20ABA0A218FDDB8900CFE569 /* GridClickTests-Info.plist */,
+				20ABA0A318FDDB8900CFE569 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20ABA07818FDDB8900CFE569 /* GridClick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20ABA0AA18FDDB8900CFE569 /* Build configuration list for PBXNativeTarget "GridClick" */;
+			buildPhases = (
+				20ABA07518FDDB8900CFE569 /* Sources */,
+				20ABA07618FDDB8900CFE569 /* Frameworks */,
+				20ABA07718FDDB8900CFE569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GridClick;
+			productName = GridClick;
+			productReference = 20ABA07918FDDB8900CFE569 /* GridClick.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20ABA09918FDDB8900CFE569 /* GridClickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20ABA0AD18FDDB8900CFE569 /* Build configuration list for PBXNativeTarget "GridClickTests" */;
+			buildPhases = (
+				20ABA09618FDDB8900CFE569 /* Sources */,
+				20ABA09718FDDB8900CFE569 /* Frameworks */,
+				20ABA09818FDDB8900CFE569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20ABA09F18FDDB8900CFE569 /* PBXTargetDependency */,
+			);
+			name = GridClickTests;
+			productName = GridClickTests;
+			productReference = 20ABA09A18FDDB8900CFE569 /* GridClickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20ABA07118FDDB8900CFE569 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Hannes Remahl";
+				TargetAttributes = {
+					20ABA09918FDDB8900CFE569 = {
+						TestTargetID = 20ABA07818FDDB8900CFE569;
+					};
+				};
+			};
+			buildConfigurationList = 20ABA07418FDDB8900CFE569 /* Build configuration list for PBXProject "GridClick" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20ABA07018FDDB8900CFE569;
+			productRefGroup = 20ABA07A18FDDB8900CFE569 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20ABA07818FDDB8900CFE569 /* GridClick */,
+				20ABA09918FDDB8900CFE569 /* GridClickTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20ABA07718FDDB8900CFE569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20ABA08718FDDB8900CFE569 /* InfoPlist.strings in Resources */,
+				20ABA09518FDDB8900CFE569 /* Images.xcassets in Resources */,
+				20ABA08D18FDDB8900CFE569 /* Credits.rtf in Resources */,
+				20ABA09318FDDB8900CFE569 /* MainMenu.xib in Resources */,
+				20ABA0B618FDECF700CFE569 /* HRGridWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20ABA09818FDDB8900CFE569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20ABA0A518FDDB8900CFE569 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20ABA07518FDDB8900CFE569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20ABA09018FDDB8900CFE569 /* HRAppDelegate.m in Sources */,
+				20ABA08918FDDB8900CFE569 /* main.m in Sources */,
+				20ABA0B518FDECF700CFE569 /* HRGridWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20ABA09618FDDB8900CFE569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20ABA0A718FDDB8900CFE569 /* GridClickTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20ABA09F18FDDB8900CFE569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20ABA07818FDDB8900CFE569 /* GridClick */;
+			targetProxy = 20ABA09E18FDDB8900CFE569 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20ABA08518FDDB8900CFE569 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20ABA08618FDDB8900CFE569 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		20ABA08B18FDDB8900CFE569 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20ABA08C18FDDB8900CFE569 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		20ABA09118FDDB8900CFE569 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20ABA09218FDDB8900CFE569 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		20ABA0A318FDDB8900CFE569 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20ABA0A418FDDB8900CFE569 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20ABA0A818FDDB8900CFE569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		20ABA0A918FDDB8900CFE569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		20ABA0AB18FDDB8900CFE569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridClick/GridClick-Prefix.pch";
+				INFOPLIST_FILE = "GridClick/GridClick-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		20ABA0AC18FDDB8900CFE569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridClick/GridClick-Prefix.pch";
+				INFOPLIST_FILE = "GridClick/GridClick-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		20ABA0AE18FDDB8900CFE569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GridClick.app/Contents/MacOS/GridClick";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridClick/GridClick-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GridClickTests/GridClickTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		20ABA0AF18FDDB8900CFE569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GridClick.app/Contents/MacOS/GridClick";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridClick/GridClick-Prefix.pch";
+				INFOPLIST_FILE = "GridClickTests/GridClickTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20ABA07418FDDB8900CFE569 /* Build configuration list for PBXProject "GridClick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20ABA0A818FDDB8900CFE569 /* Debug */,
+				20ABA0A918FDDB8900CFE569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20ABA0AA18FDDB8900CFE569 /* Build configuration list for PBXNativeTarget "GridClick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20ABA0AB18FDDB8900CFE569 /* Debug */,
+				20ABA0AC18FDDB8900CFE569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		20ABA0AD18FDDB8900CFE569 /* Build configuration list for PBXNativeTarget "GridClickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20ABA0AE18FDDB8900CFE569 /* Debug */,
+				20ABA0AF18FDDB8900CFE569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20ABA07118FDDB8900CFE569 /* Project object */;
+}
