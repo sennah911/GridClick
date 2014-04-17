@@ -206,7 +206,7 @@ void postMouseEvent(CGMouseButton button, CGEventType type, const CGPoint point)
             [self close];
             [self.oldApp activateWithOptions:NSApplicationActivateIgnoringOtherApps];
             
-            [self performSelector:@selector(clickMouse) withObject:nil afterDelay:1];
+            [self performSelector:@selector(clickMouse) withObject:nil afterDelay:0.5];
         }
     }
 }

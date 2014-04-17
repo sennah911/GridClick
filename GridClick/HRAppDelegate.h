@@ -10,7 +10,10 @@
 #import <Carbon/Carbon.h>
 #import "HRGridWindowController.h"
 
-@interface HRAppDelegate : NSObject <NSApplicationDelegate>
+@interface HRAppDelegate : NSObject <NSApplicationDelegate> {
+    NSStatusItem *statusItem;
+    NSMenu *menu;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 @property HRGridWindowController* gridWindowController;

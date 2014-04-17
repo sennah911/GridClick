@@ -28,6 +28,14 @@
     GetApplicationEventTarget(), 0, &gMyHotKeyRef);
     
     globalSelf = self;
+    
+    [self createMenu];
+}
+
+- (void)createMenu {
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    [statusItem setTitle:@"🐭"];
+    [statusItem setMenu:menu];
 }
 
 - (void)showGrid {
