@@ -481,6 +481,7 @@
 				20ABA0AC18FDDB8900CFE569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20ABA0AD18FDDB8900CFE569 /* Build configuration list for PBXNativeTarget "GridClickTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +490,7 @@
 				20ABA0AF18FDDB8900CFE569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

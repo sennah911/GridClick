@@ -23,8 +23,21 @@
     return self;
 }
 
+- (id)initWithWindowNibName:(NSString *)windowNibName numViews:(int)widthCount keys:(NSArray *)keys
+{
+    self = [super initWithWindowNibName:windowNibName];
+    if (self) {
+        // Initialization code here.
+        numViews = widthCount * widthCount;
+        keysInOrder = keys;
+    }
+    return self;
+}
+
 - (void)windowDidLoad
 {
+    numViews = 9;
+    views = [[NSMutableArray alloc] init];
     [super windowDidLoad];
     
     [self.window setStyleMask:[self.window styleMask] | NSNonactivatingPanelMask];
@@ -35,62 +48,49 @@
     
     
     NSScreen *screen = [NSScreen mainScreen];
-    NSPoint mouseLoc = [NSEvent mouseLocation];
     [self.window setFrame:CGRectMake(0, 0, screen.frame.size.width, screen.frame.size.height) display:NO];
     
-    
-    [NSApp activateIgnoringOtherApps:YES];
-    //[self.window makeKeyAndOrderFront:nil];
-    [self.window makeFirstResponder:self];
-    
+    [self setupViews];
+}
+
+- (void)setupViews {
+    int width = (int)sqrt(numViews);
+    NSScreen *screen = [NSScreen mainScreen];
     NSColor *white = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.5];
     NSColor *black = [NSColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     
-    view1 = [[NSView alloc] initWithFrame:CGRectMake(0, 0, mouseLoc.x, mouseLoc.y)];
-    [view1 setWantsLayer:YES];
-    view1.layer.borderColor = [white CGColor];
-    view1.layer.backgroundColor = [black CGColor];
-    view1.layer.borderWidth = 2;
-    [self.window.contentView addSubview:view1];
-    
-    
-    view2 = [[NSView alloc] initWithFrame:CGRectMake(mouseLoc.x, 0, screen.frame.size.width - mouseLoc.x, mouseLoc.y)];
-    [view2 setWantsLayer:YES];
-    view2.layer.borderColor = [white CGColor];
-    view2.layer.backgroundColor = [black CGColor];
-    view2.layer.borderWidth = 2;
-    [self.window.contentView addSubview:view2];
-    
-    
-    view3 = [[NSView alloc] initWithFrame:CGRectMake(0, mouseLoc.y, mouseLoc.x, screen.frame.size.height - mouseLoc.y)];
-    [view3 setWantsLayer:YES];
-    view3.layer.borderColor = [white CGColor];
-    view3.layer.backgroundColor = [black CGColor];
-    view3.layer.borderWidth = 2;
-    [self.window.contentView addSubview:view3];
-    
-    view4 = [[NSView alloc] initWithFrame:CGRectMake(mouseLoc.x, mouseLoc.y, screen.frame.size.width - mouseLoc.x, screen.frame.size.height - mouseLoc.y)];
-    [view4 setWantsLayer:YES];
-    view4.layer.borderColor = [white CGColor];
-    view4.layer.backgroundColor = [black CGColor];
-    view4.layer.borderWidth = 2;
-    [self.window.contentView addSubview:view4];
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < width; j++) {
+            NSView *view = [[NSView alloc] initWithFrame:CGRectMake(i*screen.frame.size.width/width, j*screen.frame.size.height/width, screen.frame.size.width/width, screen.frame.size.height/width)];
+            [view setWantsLayer:YES];
+            view.layer.borderColor = [white CGColor];
+            view.layer.backgroundColor = [black CGColor];
+            view.layer.borderWidth = 2;
+            [self.window.contentView addSubview:view];
+            
+            [views addObject:view];
+        }
+    }
 }
 
-- (void)reloadGrid {
-    NSScreen *screen = [NSScreen mainScreen];
-    NSPoint mouseLoc = [NSEvent mouseLocation];
+- (void)reloadGrid:(CGRect)rect {
     focusCoord = CGPointMake(1, 1);
     
-    [NSApp activateIgnoringOtherApps:YES];
-    [self.window makeFirstResponder:self];
+    int counter = 0;
+    int width = (int)sqrt(numViews);
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < width; j++) {
+            NSView *view = [views objectAtIndex:counter];
+            view.frame = CGRectMake(rect.origin.x + (j*rect.size.width/width), rect.origin.y + (i*rect.size.height/width), rect.size.width/width, rect.size.height/width);
+            counter++;
+        }
+    }
     
+    newFrame = rect;
     
-    view1.frame = CGRectMake(0, 0, mouseLoc.x, mouseLoc.y);
-    view2.frame = CGRectMake(mouseLoc.x, 0, screen.frame.size.width - mouseLoc.x, mouseLoc.y);
-    view3.frame = CGRectMake(0, mouseLoc.y, mouseLoc.x, screen.frame.size.height - mouseLoc.y);
-    view4.frame = CGRectMake(mouseLoc.x, mouseLoc.y, screen.frame.size.width - mouseLoc.x, screen.frame.size.height - mouseLoc.y);
-    
+    NSScreen *screen = [NSScreen mainScreen];
+    newMousePoint = CGPointMake(rect.origin.x+rect.size.width/2, screen.frame.size.height - (rect.origin.y+rect.size.height/2));
+    CGWarpMouseCursorPosition(newMousePoint);
 }
 
 void postMouseEvent(CGMouseButton button, CGEventType type, const CGPoint point) {
@@ -100,121 +100,73 @@ void postMouseEvent(CGMouseButton button, CGEventType type, const CGPoint point)
     CFRelease(theEvent);
 }
 
+
 - (void)keyDown:(NSEvent *)theEvent
 {
-    NSLog(@"%@", theEvent);
-    NSScreen *screen = [NSScreen mainScreen];
-    
     NSUInteger flags = [theEvent modifierFlags] & NSDeviceIndependentModifierFlagsMask;
 
     if (flags == NSCommandKeyMask) {
-        if ([theEvent keyCode] == 4) {
-            NSLog(@"Cmd-H");
-            if (focusCoord.x > 0) {
-                focusCoord.x -= 1;
-            }
-        } else if ([theEvent keyCode] == 38) {
-            NSLog(@"Cmd-J");
-            if (focusCoord.y > 0) {
-                focusCoord.y -= 1;
-            }
-        } else if ([theEvent keyCode] == 40) {
-            NSLog(@"Cmd-K");
-            if (focusCoord.y < 2) {
-                focusCoord.y += 1;
-            }
-        } else if ([theEvent keyCode] == 37) {
-            NSLog(@"Cmd-L");
-            if (focusCoord.x < 2) {
-                focusCoord.x += 1;
-            }
+        if ([theEvent keyCode] == 36) {
+            [self rightClickMouse];
+            [self close];
         }
-        
-        focusCoord.x = (int)focusCoord.x % 3;
-        focusCoord.y = (int)focusCoord.y % 3;
-        NSLog(@"%f, %f", focusCoord.x, focusCoord.y);
-        NSLog(@"%f, %f", newFrame.origin.x, newFrame.origin.y);
-        
-        if (focusCoord.x == 0) {
-            newMousePoint.x = view1.frame.origin.x;
-        } else if (focusCoord.x == 1) {
-            newMousePoint.x = view2.frame.origin.x;
-        } else if (focusCoord.x == 2) {
-            newMousePoint.x = view2.frame.origin.x + view2.frame.size.width;
-        }
-        
-        
-        if (focusCoord.y == 0) {
-            newMousePoint.y = screen.frame.size.height - view1.frame.origin.y;
-        } else if (focusCoord.y == 1) {
-            newMousePoint.y = screen.frame.size.height - view3.frame.origin.y;
-        } else if (focusCoord.y == 2) {
-            newMousePoint.y = screen.frame.size.height - (view3.frame.origin.y + view3.frame.size.height);
-        }
-        
-        CGWarpMouseCursorPosition(newMousePoint);
         
         
     } else {
     
-        if ([theEvent keyCode] == 38) { //1
-            NSLog(@"1 pressed");
-            newFrame = view1.frame;
-        } else if ([theEvent keyCode] == 40) {
-            NSLog(@"2 pressed");
-            newFrame = view2.frame;
-        } else if ([theEvent keyCode] == 32) {
-            NSLog(@"3 pressed");
-            newFrame = view3.frame;
-        } else if ([theEvent keyCode] == 34) {
-            NSLog(@"4 pressed");
-            newFrame = view4.frame;
+        for (NSNumber *key in keysInOrder) {
+            if ([key intValue] == [theEvent keyCode]) {
+                NSView *view = [views objectAtIndex:[keysInOrder indexOfObject:key]];
+                newFrame = view.frame;
+                [self reloadGrid:newFrame];
+            }
         }
-    
-        if ([theEvent keyCode] == 38 || [theEvent keyCode] == 40 || [theEvent keyCode] == 32 || [theEvent keyCode] == 34) {
-    
-            view1.frame = CGRectMake(newFrame.origin.x, newFrame.origin.y, newFrame.size.width/2, newFrame.size.height/2);
-            view2.frame = CGRectMake(newFrame.origin.x + newFrame.size.width/2, newFrame.origin.y, newFrame.size.width/2, newFrame.size.height/2);
-            view3.frame = CGRectMake(newFrame.origin.x, newFrame.origin.y + newFrame.size.height/2, newFrame.size.width/2, newFrame.size.height/2);
-            view4.frame = CGRectMake(newFrame.origin.x + newFrame.size.width/2, newFrame.origin.y + newFrame.size.height/2, newFrame.size.width/2, newFrame.size.height/2);
-        }
-        
-        
-        
-        if (focusCoord.x == 0) {
-            newMousePoint.x = view1.frame.origin.x;
-        } else if (focusCoord.x == 1) {
-            newMousePoint.x = view2.frame.origin.x;
-        } else if (focusCoord.x == 2) {
-            newMousePoint.x = view2.frame.origin.x + view2.frame.size.width;
-        }
-        
-        
-        if (focusCoord.y == 0) {
-            newMousePoint.y = screen.frame.size.height - view1.frame.origin.y;
-        } else if (focusCoord.y == 1) {
-            newMousePoint.y = screen.frame.size.height - view3.frame.origin.y;
-        } else if (focusCoord.y == 2) {
-            newMousePoint.y = screen.frame.size.height - (view3.frame.origin.y + view3.frame.size.height);
-        }
-        
-        CGWarpMouseCursorPosition(newMousePoint);
         
         if ([theEvent keyCode] == 36) {
-            [self resignFirstResponder];
-            
+            [self clickMouse];
             [self close];
-            [self.oldApp activateWithOptions:NSApplicationActivateIgnoringOtherApps];
-            
-            [self performSelector:@selector(clickMouse) withObject:nil afterDelay:0.5];
         }
+        
+        if ([theEvent keyCode] == 17) {
+            NSLog(@"tab pressed");
+            [self toggleGridSize];
+        }
+ 
     }
+}
+
+- (void)toggleGridSize {
+    for (NSView *view in views) {
+        [view removeFromSuperview];
+    }
+    //[views removeAllObjects];
+    
+    if (numViews == 9) {
+        numViews = 4;
+        for (int i = 0; i < numViews; i++) {
+            [self.window.contentView addSubview:[views objectAtIndex:i]];
+        }
+        
+        keysInOrder = @[@38, @40, @32, @34];
+    } else {
+        numViews = 9;
+        for (int i = 0; i < numViews; i++) {
+            [self.window.contentView addSubview:[views objectAtIndex:i]];
+        }
+        keysInOrder = @[@46, @43, @47, @38, @40, @37, @32, @34, @31];
+    }
+    [self reloadGrid:newFrame];
 }
 
 
 - (void)clickMouse {
     postMouseEvent(kCGMouseButtonLeft, kCGEventLeftMouseDown, newMousePoint);
     postMouseEvent(kCGMouseButtonLeft, kCGEventLeftMouseUp, newMousePoint);
+}
+
+- (void)rightClickMouse {
+    postMouseEvent(kCGMouseButtonRight, kCGEventRightMouseDown, newMousePoint);
+    postMouseEvent(kCGMouseButtonRight, kCGEventRightMouseUp, newMousePoint);
 }
 
 @end

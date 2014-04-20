@@ -10,10 +10,11 @@
 #import <Carbon/Carbon.h>
 
 @interface HRGridWindowController : NSWindowController {
-    NSView *view1;
-    NSView *view2;
-    NSView *view3;
-    NSView *view4;
+    NSArray *keysInOrder;
+    
+    NSMutableArray *views;
+    
+    int numViews;
     
     CGPoint focusCoord;
     CGRect newFrame;
@@ -21,6 +22,7 @@
 }
 
 @property (strong) NSRunningApplication *oldApp;
-- (void)reloadGrid;
+- (void)reloadGrid:(CGRect)rect;
+- (id)initWithWindowNibName:(NSString *)windowNibName numViews:(int)widthCount keys:(NSArray *)keys;
 
 @end

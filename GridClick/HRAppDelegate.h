@@ -13,6 +13,7 @@
 @interface HRAppDelegate : NSObject <NSApplicationDelegate> {
     NSStatusItem *statusItem;
     NSMenu *menu;
+    NSMutableArray *modKeyValues;
 }
 
 @property (assign) IBOutlet NSWindow *window;
