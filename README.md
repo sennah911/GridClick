@@ -16,8 +16,22 @@ Use Command-Alt-Space to activate then choose your target area with u/i/j/k unti
     "                  "                   "
     "                  "                   "
     """"""""""""""""""""""""""""""""""""""""
-
-You can also move the mouse to the different intersections with Command-[h/j/k/l]
+    
+Swich between 4 cells and 9 cells with 'T'.
+    
+    """"""""""""""""""""""""""""""""""""""""
+    "            "            "            "
+    "      u     "     i      "     o      "
+    "            "            "            "
+    """"""""""""""""""""""""""""""""""""""""
+    "            "            "            "
+    "      j     "     k      "     l      "
+    "            "            "            "
+    """"""""""""""""""""""""""""""""""""""""
+    "            "            "            "
+    "      m     "     ,      "     .      "
+    "            "            "            "
+    """"""""""""""""""""""""""""""""""""""""
 
 ==========
 
